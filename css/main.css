@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --index: calc(1vw + 1vh);
+    --color-header: #f4efec;
+    --color-text: #cdc6c3;
+    --gallery-gap: calc(var(--index) * 10);
+}
+
+@font-face {
+    font-family: raleway-c;
+    src: url(../fonts/raleway-regular.woff2);
+}
+
+@font-face {
+    font-family: monserrat-c;
+    src: url(../fonts/Montserrat-Black.ttf);
+}
+
+@font-face {
+    font-family: circe-c;
+    src: url(../fonts/Circe-Regular.ttf);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: monserrat-c;
+}
+
+.content, .hero, .main-header, .gallery > * {
+    will-change: transform;
+}
+
+body {
+    background-image: url(../andrew_img/bg.jpg);
+    background-size: 50px;
+    color: #fafafa;
+    font-family: raleway-c;
+    overflow-x: hidden;
+    overflow: overlay;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(90, 90, 90);
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.hero {
+    width: calc(var(--index) * 36);
+    position: absolute;
+    left: 45vw;
+    top: -15vh;
+    z-index: -1;
+}
+
+.main-header {
+    height: 100vh;
+}
+
+.container {
+    padding: 0 7vw;
+}
+
+.main-title {
+    font-size: calc(var(--index) * 5);
+    position: absolute;
+    width: min-content;
+    bottom: 12vh;
+    line-height: .9;
+}
+
+.gallery {
+    display: flex;
+    padding: calc(var(--index) * 8) 0;
+}
+
+.gallery > * {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.gallery__item {
+    max-width: calc(var(--index) * 21);
+    margin-bottom: var(--gallery-gap);
+    max-height: 180vh;
+    border-radius: 8px;
+}
+
+.gallery__left {
+    margin-top: calc(var(--gallery-gap) * 1.75); /*это можно убрать*/
+}
+
+.gallery__right {
+    margin: 0;
+    margin-top: var(--gallery-gap);
+}
+
+.text-block {
+    color: var(--color-text);
+    position: relative;
+}
+
+.text-block__h {
+    font-size: calc(var(--index) * 1.25);
+    line-height: calc(var(--index) * 1.75);
+    color: var(--color-header);
+    margin-bottom: 1.5rem;
+}
+
+.text-block p {
+    line-height: calc(var(--index) * 1.25);
+    font-size: calc(var(--index) * 1.25);
+}
